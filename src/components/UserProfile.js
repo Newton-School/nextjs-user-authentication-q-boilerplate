@@ -1,8 +1,8 @@
 import React from "react";
-import { connect } from "react-redux";
-import { logoutUser } from "../redux/thunks/auth";
+import { logout } from "../redux/slices/authSlice";
+import { useDispatch } from "react-redux";
 
-const UserProfile = ({ user, logoutUser }) => {
+const UserProfile = ({ user }) => {
   const handleLogout = () => {
     // TODO: Implement logout button click logic here
     // Replace this comment with your code for handling the logout button click
@@ -11,16 +11,10 @@ const UserProfile = ({ user, logoutUser }) => {
   return (
     <div>
       <h2>User Profile</h2>
-      {/* TODO: Display user's username if user is logged in */}
-      {/* TODO: Display a welcome message */}
+      <p>Welcome!</p>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  // TODO: Map user data from the Redux store state to props
-  // Replace this comment with your code for mapping user data
-});
-
-export default connect(mapStateToProps, { logoutUser })(UserProfile);
+export default UserProfile;

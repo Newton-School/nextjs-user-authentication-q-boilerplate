@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { login } from "../redux/thunks/auth";
 
-const LoginForm = ({ login }) => {
+const LoginForm = () => {
   const [credentials, setCredentials] = useState({
     username: "",
     password: "",
@@ -41,4 +41,4 @@ const LoginForm = ({ login }) => {
   );
 };
 
-export default connect(null, { login })(LoginForm);
+export default LoginForm;

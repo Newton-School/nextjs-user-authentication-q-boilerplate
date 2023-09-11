@@ -1,19 +1,15 @@
 import React from "react";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import LoginForm from "./LoginForm";
 import UserProfile from "./UserProfile";
 
-const App = ({ isAuthenticated }) => {
+const App = () => {
   return (
     <div>
       <h1>User Authentication App</h1>
-      {/* TODO: Conditionally render LoginForm or UserProfile based on isAuthenticated */}
+      {/* TODO: Conditionally render LoginForm or UserProfile based on if the user is authenticated or not */}
     </div>
   );
 };
 
-const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated,
-});
-
-export default connect(mapStateToProps)(App);
+export default App;
